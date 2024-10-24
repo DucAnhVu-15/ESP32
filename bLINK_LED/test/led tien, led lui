@@ -1,0 +1,38 @@
+#include <Arduino.h>
+
+int led[] = {13, 25, 26, 33, 32};
+unsigned int but_on = 1;
+unsigned int but_off = 1;
+
+void setup() {
+  for (int i = 0; i < 5; i++) {
+    pinMode(led[i], OUTPUT);
+    digitalWrite(led[i], HIGH);
+  }
+  pinMode( 18, INPUT);
+  pinMode( 27, INPUT);
+}
+
+void loop() {
+  static int i = 0;
+  but_on = digitalRead(27);
+  but_off = digitalRead(18);
+  
+  if ( but_on == 0 ){
+      i++;
+      if ( i > 4){
+        i = 0;
+      }
+      digitalWrite(led[i], 0);
+      delay(1);
+  }
+
+  if ( but_off == 0 ){
+    i--;
+    if ( i < 0 ){
+      i = 5;
+    }
+    digitalWrite(led[i], 1);
+    delay(1);
+  }
+}

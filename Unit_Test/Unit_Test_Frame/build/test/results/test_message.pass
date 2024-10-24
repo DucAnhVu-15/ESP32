@@ -1,0 +1,46 @@
+---
+:source:
+  :path: test
+  :file: test_message.c
+:successes:
+- :test: test_Frame_Sensor_Confirm_Port
+  :line: 88
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 1
+  :failed: 0
+  :ignored: 0
+:stdout:
+- "/*-------------------------------------------------------------------------------------------------------"
+- "*//*-------------------------------------------------------------------------------------------------------*/"
+- Start test
+- "/*-------------------------------------------------------------------------------------------------------*/"
+- length_frame_confirm_port = 10
+- '55 aa 03 00 05 00 01 02 0f ac '
+- arr_frame_confirm_port[0] = 55
+- arr_frame_test_confirm_port[0] = 55
+- arr_frame_confirm_port[1] = aa
+- arr_frame_test_confirm_port[1] = aa
+- arr_frame_confirm_port[2] = 3
+- arr_frame_test_confirm_port[2] = 3
+- arr_frame_confirm_port[3] = 0
+- arr_frame_test_confirm_port[3] = 0
+- arr_frame_confirm_port[4] = 5
+- arr_frame_test_confirm_port[4] = 5
+- arr_frame_confirm_port[5] = 0
+- arr_frame_test_confirm_port[5] = 0
+- arr_frame_confirm_port[6] = 1
+- arr_frame_test_confirm_port[6] = 1
+- arr_frame_confirm_port[7] = 2
+- arr_frame_test_confirm_port[7] = 2
+- arr_frame_confirm_port[8] = f
+- arr_frame_test_confirm_port[8] = f
+- arr_frame_confirm_port[9] = ac
+- arr_frame_test_confirm_port[9] = ac
+- Test passed
+- "/*-------------------------------------------------------------------------------------------------------*/"
+:time: 0.018291371000486834

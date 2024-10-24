@@ -1,0 +1,59 @@
+// #include <Servo.h>
+// #include <Wire.h>
+// #include <Arduino.h>
+// #include<DHT.h>
+// #include <Adafruit_Sensor.h>
+
+// uint8_t Led = 32;
+// uint8_t Cambien = 27;
+// uint8_t Value = 0;
+
+// void setup()
+// {
+//   Serial.begin(9600);
+
+//   pinMode(Led, OUTPUT);
+//   pinMode(Cambien, INPUT);
+
+// }
+
+// void loop ()
+// {
+//   Value = digitalRead(Cambien);
+//   digitalWrite(Led,Value);
+// }
+
+#include <Servo.h>
+#include <Wire.h>
+#include <Arduino.h>
+#include<DHT.h>
+#include <Adafruit_Sensor.h>
+
+uint8_t Led = 15;
+uint8_t Cambien = 2;
+uint8_t Value = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+
+  pinMode(Led, OUTPUT);
+  digitalWrite(Led,HIGH);
+  pinMode(Cambien, INPUT);
+
+}
+
+void loop ()
+{
+  Value = digitalRead(Cambien);
+  Serial.println(Value);
+  if ( Value == 1 )
+  {
+    digitalWrite(Led, LOW);
+    delay(100);
+  }
+  else {
+    digitalWrite(Led, HIGH);
+    delay(100);
+  }
+}

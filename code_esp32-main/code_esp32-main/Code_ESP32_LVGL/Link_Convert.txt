@@ -1,0 +1,5 @@
+# Chỉnh ảnh nhỏ 240x320
+https://www.iloveimg.com/vi/thay-doi-kich-thuoc-anh#resize-options,pixels
+
+# Convert Image to Hex
+https://lvgl.io/tools/imageconverter

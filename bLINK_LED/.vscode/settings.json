@@ -1,0 +1,12 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "led sang dan": "cpp",
+        "led tien, led lui": "cpp",
+        "nrf_phat": "c",
+        "*.tcc": "c",
+        "json": "cpp",
+        "mqtt": "cpp"
+    },
+    "cmake.sourceDirectory": "C:/Users/ADMIN/Documents/bLINK_LED/.pio/libdeps/nodemcu-32s/Unity"
+}

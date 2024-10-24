@@ -1,0 +1,31 @@
+---
+:source:
+  :path: test
+  :file: test_message.c
+:successes: []
+:failures:
+- :test: test_Create_Frame_Message
+  :line: 53
+  :message: Expected 251 Was 0
+  :unity_test_time: 0
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 0
+  :failed: 1
+  :ignored: 0
+:stdout:
+- "/*-------------------------------------------------------------------------------------------------------"
+- "*//*-------------------------------------------------------------------------------------------------------*/"
+- Start test
+- "/*-------------------------------------------------------------------------------------------------------*/"
+- length_frame = 12
+- arr_frame_test[0] = 55
+- arr_frame_test[1] = aa
+- arr_frame_test[2] = 1
+- arr_frame_test[3] = 0
+- arr_frame_test[4] = 6
+- arr_frame_test[5] = 0
+- arr_frame_test[6] = 2
+- arr_frame_test[7] = 1
+:time: 0.02965168700029608

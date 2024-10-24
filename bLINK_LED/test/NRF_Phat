@@ -1,0 +1,45 @@
+#include <Arduino.h>
+#include <SPI.h>
+#include <nRF24L01.h>
+#include <RF24.h>
+#include <Servo.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+
+#define VrxPin 26
+#define VryPin 27
+
+RF24 radio(5, 22);
+
+int angulo = 0;
+int lecturaADC = 0;
+
+int Address = 0;
+
+const byte direccion[] = "00001";
+
+void setup()
+{
+    Serial.begin(9600);
+
+    // pinMode(VrxPin, INPUT);
+    // pinMode(VryPin, INPUT);
+
+    radio.begin();
+    
+    radio.openWritingPipe(direccion);
+    radio.setPALevel(RF24_PA_MIN);
+    radio.stopListening();
+}
+
+void loop()
+{
+    lecturaADC = analogRead(VrxPin);
+    angulo = map(lecturaADC, 0, 4095, 0, 180);
+    // int angulo = lecturaADC;
+    Serial.println(angulo);
+    radio.write(&angulo, sizeof(angulo));
+    delay(100);
+
+    // radio.write(&Address, sizeof(Address));
+}

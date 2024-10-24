@@ -1,0 +1,37 @@
+#include <Arduino.h>
+
+int led[] = {13, 25, 26};
+unsigned int but_on = 1;
+unsigned int ledChanel = 0;
+unsigned int res = 8;
+unsigned int f = 5000;
+unsigned int count = 0;
+void setup() {
+  Serial.begin ( 9600);
+  ledcSetup(ledChanel, f, res);
+  for (int i = 0; i < 3; i++) {
+    pinMode(led[i], OUTPUT);
+    digitalWrite(led[i], HIGH);
+    ledcAttachPin(led[i], ledChanel);
+  }
+  pinMode(18,INPUT);
+}
+
+void loop() {
+  but_on = digitalRead(18);
+  if ( but_on == 0 ){
+    count++;
+  }
+  if ( count % 2 == 1){
+    for ( int i = 0; i< 256; i++){
+    ledcWrite ( ledChanel, i);
+    delay (15);
+   }
+  }
+  else {
+    for ( int i = 255; i>=0; i--){
+    ledcWrite ( ledChanel, i);
+    delay (15);
+    }
+  }
+}

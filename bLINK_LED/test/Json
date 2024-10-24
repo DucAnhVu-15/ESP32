@@ -1,0 +1,52 @@
+#include <ArduinoJson.h>
+ #include <LiquidCrystal_I2C.h>
+#include <Arduino.h>
+#include <Wire.h>
+#include<WiFiUdp.h>
+DynamicJsonDocument data(1024);
+char Buffer[1000];
+int Length_Buffer;
+
+String ESP32_Data; // Declare the variables
+String sTemp, sHumi, sSoil;
+int val_Temp, val_Humi, val_Soil;
+
+void Data_to_Json(String js_temp, String js_humi, String js_soil)
+{
+  ESP32_Data = "{\"temp\":\"" + String(js_temp) + "\"," + "\"humi\":\"" + String(js_humi) + "\"," + "\"soil\":\"" + String(js_soil) + "\"}";
+  Length_Buffer = ESP32_Data.length() + 1;
+  ESP32_Data.toCharArray(Buffer, Length_Buffer);
+  Serial.println(Buffer);
+}
+
+void Detext(String Str)
+{
+  deserializeJson(data, Str);
+  // in ra kết qua json
+  serializeJson(data, Serial);
+  Serial.println("\n");
+  sTemp = data["temp"].as<String>();
+  sHumi = data["humi"].as<String>();
+  sSoil = data["soil"].as<String>();
+  // conver string to int
+  val_Temp = sTemp.toInt();
+  val_Humi = sHumi.toInt();
+  val_Soil = sSoil.toInt();
+  
+  Serial.println("Humi: " + String(val_Temp));
+  Serial.println("Temp: " + String(val_Humi));
+  Serial.println("Soil: " + String(val_Soil));
+}
+
+void setup()
+{
+  Serial.begin(9600); // Initialize serial communication
+}
+
+void loop()
+{
+  // Example usage:
+  Data_to_Json("25.5", "60", "35"); // Convert data to JSON and print
+  Detext(ESP32_Data); // Deserialize JSON and print the values
+  delay(2500); // Wait for 5 seconds before repeating
+}

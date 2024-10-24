@@ -1,0 +1,136 @@
+---
+:source:
+  :path: test
+  :file: test_message.c
+:successes:
+- :test: test_create_message_set_port_A
+  :line: 10
+  :message: ''
+  :unity_test_time: 0
+- :test: test_create_message_set_port_B
+  :line: 47
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Frame_ask_data
+  :line: 84
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Frame_Sensor_Confirm_Port
+  :line: 126
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Frame_Respond_Data_Lux
+  :line: 164
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Frame_Respond_Data_Res
+  :line: 262
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 6
+  :passed: 6
+  :failed: 0
+  :ignored: 0
+:stdout:
+- "/*-------------------------------------------------------------------------------------------------------*/"
+- Start test set port
+- length_frame = 9
+- arr_frame_set_port[0] = 55
+- arr_frame_set_port[1] = aa
+- arr_frame_set_port[2] = 1
+- arr_frame_set_port[3] = 0
+- arr_frame_set_port[4] = 5
+- arr_frame_set_port[5] = 0
+- arr_frame_set_port[6] = 1
+- arr_frame_set_port[7] = ea
+- arr_frame_set_port[8] = e
+- get_port = 1
+- "/************************************************************************************************************/"
+- "/*-------------------------------------------------------------------------------------------------------*/"
+- Start test set port
+- length_frame = 9
+- arr_frame_set_port[0] = 55
+- arr_frame_set_port[1] = aa
+- arr_frame_set_port[2] = 1
+- arr_frame_set_port[3] = 0
+- arr_frame_set_port[4] = 5
+- arr_frame_set_port[5] = 0
+- arr_frame_set_port[6] = 2
+- arr_frame_set_port[7] = aa
+- arr_frame_set_port[8] = f
+- get_port = 2
+- "/************************************************************************************************************/"
+- "/*-------------------------------------------------------------------------------------------------------*/"
+- Start test ask data
+- length_frame = 10
+- arr_frame_ask_data[0] = 55
+- arr_frame_ask_data[1] = aa
+- arr_frame_ask_data[2] = 2
+- arr_frame_ask_data[3] = 0
+- arr_frame_ask_data[4] = 6
+- arr_frame_ask_data[5] = 0
+- arr_frame_ask_data[6] = 2
+- arr_frame_ask_data[7] = 1
+- arr_frame_ask_data[8] = 4e
+- arr_frame_ask_data[9] = c8
+- get_port = 2
+- get_type_sensor = 1
+- "/************************************************************************************************************/"
+- "/*-------------------------------------------------------------------------------------------------------*/"
+- Start test confirm
+- length_frame = 10
+- arr_frame_confirm_port[0] = 55
+- arr_frame_confirm_port[1] = aa
+- arr_frame_confirm_port[2] = 3
+- arr_frame_confirm_port[3] = 0
+- arr_frame_confirm_port[4] = 6
+- arr_frame_confirm_port[5] = 0
+- arr_frame_confirm_port[6] = 2
+- arr_frame_confirm_port[7] = 1
+- arr_frame_confirm_port[8] = 4f
+- arr_frame_confirm_port[9] = 19
+- get_port = 2
+- get_type_sensor = 1
+- "/************************************************************************************************************/"
+- "/*-------------------------------------------------------------------------------------------------------*/"
+- Start test respond data
+- length_frame = 14
+- arr_frame_respond_data[0] = 55
+- arr_frame_respond_data[1] = aa
+- arr_frame_respond_data[2] = 4
+- arr_frame_respond_data[3] = 0
+- arr_frame_respond_data[4] = a
+- arr_frame_respond_data[5] = 0
+- arr_frame_respond_data[6] = 2
+- arr_frame_respond_data[7] = 1
+- arr_frame_respond_data[8] = 71
+- arr_frame_respond_data[9] = 3d
+- arr_frame_respond_data[10] = d0
+- arr_frame_respond_data[11] = 41
+- arr_frame_respond_data[12] = 61
+- arr_frame_respond_data[13] = 9c
+- get_port = 2
+- get_type_sensor = 1
+- get_data = 26.03
+- "/************************************************************************************************************/"
+- 'Convert data: 64 0 '
+- 'Check sum: a2c6 '
+- "/*-------------------------------------------------------------------------------------------------------*/"
+- Start test respond data
+- length_frame = 12
+- arr_frame_respond_data[0] = 55
+- arr_frame_respond_data[1] = aa
+- arr_frame_respond_data[2] = 4
+- arr_frame_respond_data[3] = 0
+- arr_frame_respond_data[4] = 8
+- arr_frame_respond_data[5] = 0
+- arr_frame_respond_data[6] = 2
+- arr_frame_respond_data[7] = 4
+- arr_frame_respond_data[8] = 64
+- arr_frame_respond_data[9] = 0
+- arr_frame_respond_data[10] = c6
+- arr_frame_respond_data[11] = a2
+:time: 0.01178926699992644
